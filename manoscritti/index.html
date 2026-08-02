@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Manoscritti — Edda Studio</title>
+<meta name="description" content="Raccontaci il tuo libro. Non un curriculum, non l'intero manoscritto: chi sei, cosa stai scrivendo, dove vuoi arrivare. Leggiamo tutto.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/edda.css">
+<style>
+  .cform .row2{ display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+  @media(max-width:560px){ .cform .row2{ grid-template-columns:1fr; } }
+  .cform select{ width:100%; border:2px solid var(--ink); background:var(--white); padding:14px 16px; font-family:var(--font-body); font-size:1rem; color:var(--ink); border-radius:0; }
+  .cform select:focus{ outline:none; border-color:var(--red); }
+  .consent{ display:flex; gap:12px; align-items:flex-start; font-size:0.88rem; color:var(--ink-2); }
+  .consent input{ width:18px; height:18px; margin-top:3px; accent-color:var(--red); flex:none; }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="logo" href="/">EDDA<span class="red">STUDIO</span></a>
+    <button class="nav-toggle" aria-label="Apri il menu"><span></span><span></span><span></span></button>
+    <nav><ul class="nav-links">
+      <li><a href="/manifesto/">Manifesto</a></li>
+      <li><a href="/scrittori/">Autori</a></li>
+      <li><a href="/reading-circle/">Reading Circle</a></li>
+      <li><a href="/esperienze/">Esperienze</a></li>
+      <li><a href="/la-casa/">Chi siamo</a></li>
+      <li><a href="/contatti/">Contatti</a></li>
+      <li class="nav-cta"><a href="/newsletter/">La newsletter</a></li>
+    </ul></nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="page-hero" data-screen-label="Manoscritti — Hero">
+    <div class="wrap reveal">
+      <span class="eyebrow">Manoscritti</span>
+      <h1 class="d1">Raccontaci<br>il tuo <span class="red">libro.</span></h1>
+      <hr class="rule-red" style="margin-top:30px">
+      <p class="lede mt-m" style="max-width:56ch">Non chiediamo un curriculum e non chiediamo l’intero manoscritto. Ci interessa capire chi sei, cosa stai scrivendo, dove vuoi arrivare. Leggiamo tutto e rispondiamo a tutti, entro tre giorni lavorativi.</p>
+    </div>
+  </section>
+
+  <!-- FORM -->
+  <section class="section tight" style="padding-top:0" data-screen-label="Manoscritti — Form">
+    <div class="wrap">
+      <form class="cform reveal" data-edda-contact style="max-width:680px">
+        <div class="row2">
+          <div>
+            <label for="nome">Nome e cognome</label>
+            <input id="nome" name="nome" type="text" required placeholder="Nome e cognome">
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required placeholder="la tua email">
+          </div>
+        </div>
+        <div class="row2">
+          <div>
+            <label for="titolo">Titolo (anche provvisorio)</label>
+            <input id="titolo" name="titolo" type="text" placeholder="Il titolo del tuo libro">
+          </div>
+          <div>
+            <label for="genere">Genere</label>
+            <select id="genere" name="genere">
+              <option value="narrativa">Narrativa</option>
+              <option value="saggistica">Saggistica</option>
+              <option value="memoir">Memoir</option>
+              <option value="altro">Altro</option>
+            </select>
+          </div>
+        </div>
+        <div>
+          <label for="punto">A che punto sei?</label>
+          <select id="punto" name="punto">
+            <option value="idea">Ho un’idea</option>
+            <option value="scrittura">Sono in scrittura</option>
+            <option value="pronto">Manoscritto pronto</option>
+            <option value="pubblicato">Già pubblicato</option>
+          </select>
+        </div>
+        <div>
+          <label for="progetto">Raccontaci il tuo progetto in poche righe</label>
+          <textarea id="progetto" name="progetto" required placeholder="Di cosa parla, da dove nasce, per chi lo stai scrivendo."></textarea>
+        </div>
+        <div>
+          <label for="perche">Perché Edda Studio?</label>
+          <textarea id="perche" name="perche" placeholder="Cosa ti ha portato fin qui."></textarea>
+        </div>
+        <label class="consent"><input type="checkbox" required> Ho letto l’informativa privacy e acconsento al trattamento dei miei dati per essere ricontattato.</label>
+        <div class="cta-row" style="margin-top:4px">
+          <button class="btn" type="submit">Invia <span class="arr">→</span></button>
+        </div>
+      </form>
+      <p class="meta mt-l">Preferisci scrivere una mail? <a class="link-cta" href="mailto:info@eddastudio.it" style="font-size:0.9rem">info@eddastudio.it <span class="arr">→</span></a></p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <a class="logo" href="/">EDDA<span class="red">STUDIO</span></a>
+        <p class="foot-tag">Uno studio letterario indipendente.<br>Dove gli autori trovano i lettori, e i lettori gli autori.</p>
+      </div>
+      <div class="foot-col">
+        <h4 class="display">Cosa facciamo</h4>
+        <ul>
+          <li><a href="/scrittori/">Per gli scrittori</a></li>
+          <li><a href="/esperienze/">Le esperienze</a></li>
+          <li><a href="/reading-circle/">Reading Circle</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4 class="display">Lo studio</h4>
+        <ul>
+          <li><a href="/manifesto/">Manifesto</a></li>
+          <li><a href="/la-casa/">Chi siamo</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4 class="display">Resta in contatto</h4>
+        <ul>
+          <li><a href="mailto:info@eddastudio.it">info@eddastudio.it</a></li>
+          <li><a href="#">Instagram @eddaedizioni</a></li>
+          <li><a href="#">LinkedIn @saraboscaro</a></li>
+          <li><span style="color:#8a8a85">Padova, Italia</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© Edda Studio MMXXVI</span><span>·</span><span>P.IVA [da inserire]</span><span>·</span><a href="/legali/#privacy">Privacy</a><span>·</span><a href="/legali/#cookie">Cookie</a>
+    </div>
+  </div>
+</footer>
+
+<script src="/image-slot.js"></script>
+<script src="/edda.js"></script>
+</body>
+</html>

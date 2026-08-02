@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Manifesto — Edda Studio · Una casa di lettura italiana</title>
+<meta name="description" content="Il documento fondativo di Edda Studio. Una casa di lettura per chi crede che leggere sia un atto di cura.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/edda.css">
+<template id="__bundler_thumbnail">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+    <rect width="400" height="400" fill="#F5F5F0"/>
+    <text x="50%" y="46%" text-anchor="middle" font-family="Arial Black, sans-serif" font-weight="900" font-size="58" letter-spacing="-1" fill="#0E0E0E">EDDA</text>
+    <text x="50%" y="62%" text-anchor="middle" font-family="Arial Black, sans-serif" font-weight="900" font-size="58" letter-spacing="-1" fill="#E8002D">STUDIO</text>
+    <rect x="160" y="280" width="80" height="10" fill="#E8002D"/>
+  </svg>
+</template>
+<style>
+  .read{ max-width:70ch; }
+  .read p{ margin:0 0 1.3em; }
+  .chapter{ margin-top:clamp(64px,9vw,120px); }
+  .chapter .kick{ font-family:var(--font-display); font-weight:800; font-stretch:125%; text-transform:uppercase; color:var(--red); font-size:0.74rem; letter-spacing:0.2em; display:block; margin-bottom:14px; }
+  .chapter h2{ font-size:clamp(2rem,4.6vw,3.4rem); line-height:0.96; }
+  .chapter .rule-red{ margin-top:26px; }
+  .oneliner{ font-family:var(--font-display); font-weight:900; font-stretch:125%; text-transform:uppercase; font-size:clamp(1.3rem,2.4vw,2rem); line-height:1.06; max-width:24ch; margin:8px 0 0; }
+  .value{ display:grid; grid-template-columns:auto 1fr; gap:22px; padding:26px 0; border-top:1px solid rgba(14,14,14,.16); }
+  .value:last-child{ border-bottom:1px solid rgba(14,14,14,.16); }
+  .value .roman{ font-size:clamp(1.8rem,3vw,2.6rem); }
+  .value h3{ font-size:clamp(1.1rem,1.8vw,1.4rem); margin-bottom:10px; }
+  .value p{ margin:0; max-width:62ch; }
+  .pillarbig{ border-top:1.5px solid var(--ink); padding:clamp(30px,4vw,52px) 0; display:grid; grid-template-columns:140px 1fr; gap:clamp(20px,4vw,56px); }
+  .pillarbig:last-child{ border-bottom:1.5px solid var(--ink); }
+  .pillarbig .roman{ font-size:clamp(2.6rem,5vw,4rem); }
+  .pillarbig h3{ font-size:clamp(1.6rem,2.6vw,2.2rem); margin-bottom:16px; }
+  .pillarbig p{ max-width:64ch; margin:0; }
+  @media(max-width:640px){ .pillarbig{ grid-template-columns:1fr; gap:12px; } .value{ grid-template-columns:1fr; gap:8px; } }
+  .voicegrid{ display:grid; grid-template-columns:1fr 1fr; gap:clamp(28px,4vw,56px); }
+  @media(max-width:760px){ .voicegrid{ grid-template-columns:1fr; } }
+  .voicelist{ list-style:none; margin:0; padding:0; }
+  .voicelist li{ padding:10px 0; border-top:1px solid rgba(14,14,14,.14); }
+  .voicelist li b{ color:var(--ink); }
+  .lex{ list-style:none; margin:0; padding:0; }
+  .lex li{ padding:18px 0; border-top:1px solid rgba(14,14,14,.16); }
+  .lex li:last-child{ border-bottom:1px solid rgba(14,14,14,.16); }
+  .lex .term{ font-family:var(--font-display); font-weight:900; font-stretch:125%; text-transform:uppercase; color:var(--ink); font-size:1.05rem; }
+  .lex .gloss{ color:var(--ink-2); }
+  .sign{ margin-top:clamp(56px,7vw,90px); border-top:5px solid var(--red); padding-top:28px; }
+  .sign .nm{ font-family:var(--font-display); font-weight:900; font-stretch:125%; text-transform:uppercase; font-size:1.6rem; }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="logo" href="/">EDDA<span class="red">STUDIO</span></a>
+    <button class="nav-toggle" aria-label="Apri il menu"><span></span><span></span><span></span></button>
+    <nav><ul class="nav-links">
+      <li><a href="/manifesto/">Manifesto</a></li>
+      <li><a href="/scrittori/">Autori</a></li>
+      <li><a href="/reading-circle/">Reading Circle</a></li>
+      <li><a href="/esperienze/">Esperienze</a></li>
+      <li><a href="/la-casa/">Chi siamo</a></li>
+      <li><a href="/contatti/">Contatti</a></li>
+      <li class="nav-cta"><a href="/newsletter/">La newsletter</a></li>
+    </ul></nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="page-hero" data-screen-label="Manifesto — Hero">
+    <div class="wrap reveal">
+      <span class="eyebrow">Manifesto di posizionamento</span>
+      <h1 class="d1">Manifesto.</h1>
+      <hr class="rule-red" style="margin-top:30px">
+      <p class="lede mt-m" style="max-width:48ch">Una casa di lettura per chi crede che leggere sia un atto di cura.</p>
+      <p class="meta mt-m">Sara Boscaro &nbsp;·&nbsp; Edda Studio &nbsp;·&nbsp; Padova &nbsp;·&nbsp; MMXXVI</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+
+      <!-- PROLOGO -->
+      <div class="chapter reveal" style="margin-top:clamp(40px,6vw,80px)">
+        <span class="kick">Prologo</span>
+        <h2 class="d2">Perché esistiamo</h2>
+        <hr class="rule-red">
+      </div>
+      <div class="read reveal mt-m">
+        <p>Edda Studio nasce da una constatazione semplice e da un’inquietudine. La constatazione: in Italia leggiamo poco, e quando leggiamo, lo facciamo soli. I libri arrivano a noi attraverso algoritmi, classifiche, vetrine. La lettura è diventata un atto privato, silenzioso, quasi clandestino — qualcosa che si fa di sera, di nascosto dal lavoro, prima di addormentarsi.</p>
+        <p>L’inquietudine: questo non basta più. Non basta a noi che leggiamo, non basta agli scrittori che scrivono, non basta al tempo che stiamo attraversando. Stiamo perdendo qualcosa che la lettura ha sempre portato con sé — una forma di comunità, di rito, di cura del pensiero.</p>
+        <p class="oneliner">Non leggiamo per essere informati. Leggiamo per <span class="red">essere accompagnati.</span></p>
+        <p style="margin-top:1.3em">Edda Studio esiste per restituire alla lettura il suo corpo, la sua voce, le sue persone. Per costruire intorno ai libri uno spazio che non sia solo libreria, non sia solo recensione, non sia solo social. Uno spazio in cui leggere insieme, ascoltare scrittori veri, ritrovare il tempo lento che la pagina chiede.</p>
+        <p>Edda Studio non è solo un’agenzia letteraria. È una casa di lettura. Ed è anche un’agenzia letteraria, perché chi scrive ha bisogno di una casa. Ma il centro è altrove: è nei lettori, nelle lettrici, nelle persone che ancora credono che un libro possa cambiare un giorno, una stagione, una vita.</p>
+      </div>
+
+      <!-- CAP I -->
+      <div class="chapter reveal">
+        <span class="kick">Capitolo I</span>
+        <h2 class="d2">Il posizionamento</h2>
+        <hr class="rule-red">
+      </div>
+      <div class="read reveal mt-m">
+        <p class="oneliner" style="max-width:30ch">Edda Studio è la prima casa di lettura italiana per adulte e adulti consapevoli, dove leggere è un <span class="red">atto di cura.</span></p>
+        <p style="margin-top:1.4em">Edda Studio è una community letteraria d’autore. Raccogliamo lettrici e lettori che cercano nei libri qualcosa di più di un passatempo — cercano un modo per stare al mondo. Sviluppiamo carriere di scrittori che meritano una voce, e li mettiamo in dialogo diretto con chi li legge.</p>
+        <p><b>Non siamo</b> una libreria — non vendiamo libri come prodotto. Non siamo una scuola di scrittura — non promettiamo di trasformare nessuno in autore pubblicabile. Non siamo un’agenzia letteraria classica — non viviamo solo di percentuali sui contratti. Non siamo un brand di lifestyle — non vendiamo un’estetica vuota.</p>
+        <p>Siamo una casa. Una casa ha lettori che entrano, autori che vivono dentro, libri che si formano nelle stanze, e una padrona di casa che cura le presenze, le conversazioni, il fuoco.</p>
+      </div>
+
+      <!-- CAP II -->
+      <div class="chapter reveal">
+        <span class="kick">Capitolo II</span>
+        <h2 class="d2">A chi parliamo</h2>
+        <hr class="rule-red">
+      </div>
+      <div class="read reveal mt-m">
+        <p>Parliamo a una lettrice che esiste, che noi conosciamo bene, che oggi nessun brand culturale italiano sta servendo davvero. Ha tra i 35 e i 60 anni. Lavora — è imprenditrice, professionista, dirigente, libera consulente, insegnante, artista. Ha una vita piena e a volte stanca.</p>
+        <p>Legge da sempre. Ha scaffali pieni a casa. Compra libri più di quanti ne riesca a finire. Le piace l’estetica curata, il tempo lento, le cose fatte bene. Diffida del marketing aggressivo. Apprezza l’autorialità, la voce vera, la presenza umana dietro un brand.</p>
+        <p>Vive una contraddizione: ama la lettura come gesto solitario, ma desidera profondamente una comunità di lettori che non sia provinciale, che non sia accademica, che non sia social. Una comunità adulta, raffinata, gentile, esigente.</p>
+        <p class="oneliner" style="max-width:34ch">Cerca un luogo dove la sua intelligenza non venga semplificata e la sua sensibilità non venga banalizzata. Quel luogo, oggi, in Italia, non c’è. <span class="red">Edda Studio è quel luogo.</span></p>
+      </div>
+
+      <!-- CAP III -->
+      <div class="chapter reveal">
+        <span class="kick">Capitolo III</span>
+        <h2 class="d2">I cinque valori</h2>
+        <hr class="rule-red">
+        <p class="read mt-m">Cinque valori reggono ogni cosa che facciamo. Sono filtri: se una scelta non li attraversa, non la prendiamo.</p>
+      </div>
+      <div class="reveal mt-m">
+        <div class="value"><div class="roman">I.</div><div><h3>La cura come metodo</h3><p>Non facciamo nulla in fretta. Ogni libro, ogni autore, ogni evento, ogni newsletter è curato come un oggetto artigianale. La cura non è uno stile: è un’etica. Si riconosce nel dettaglio, nel tempo dedicato, nell’attenzione alle persone reali dietro le metriche.</p></div></div>
+        <div class="value"><div class="roman">II.</div><div><h3>L’autorialità come fondamento</h3><p>Edda Studio ha una voce. Non parliamo come un’agenzia, non parliamo come un brand. Parliamo come si parla a una persona di cui ci si fida. Anche quando crescerà, manterrà sempre un’autorialità riconoscibile, una mano, un punto di vista.</p></div></div>
+        <div class="value"><div class="roman">III.</div><div><h3>La lettura come relazione</h3><p>Leggere non è consumare libri. È entrare in relazione — con un autore, con un personaggio, con un’idea, con altri lettori. Edda Studio costruisce queste relazioni, le custodisce, le rende possibili.</p></div></div>
+        <div class="value"><div class="roman">IV.</div><div><h3>Il tempo come bene prezioso</h3><p>Viviamo in un tempo accelerato. Edda Studio è esplicitamente un controcanto. Ogni nostro prodotto rispetta il tempo lento di chi legge — non chiede attenzione frammentata, non insegue il ritmo dell’algoritmo.</p></div></div>
+        <div class="value"><div class="roman">V.</div><div><h3>La bellezza come responsabilità</h3><p>L’estetica non è decorazione. È un modo per dire al lettore che lo rispettiamo. Ogni guida, ogni newsletter, ogni evento è bello da guardare, da toccare, da abitare — perché la bellezza non è un lusso, è una forma di accoglienza.</p></div></div>
+      </div>
+
+      <!-- CAP IV -->
+      <div class="chapter reveal">
+        <span class="kick">Capitolo IV</span>
+        <h2 class="d2">I tre pilastri</h2>
+        <hr class="rule-red">
+        <p class="read mt-m">Edda Studio si regge su tre pilastri che si alimentano a vicenda. Insieme, formano un brand culturale che nessun concorrente italiano può replicare oggi.</p>
+      </div>
+      <div class="reveal mt-m">
+        <div class="pillarbig"><div class="roman">I.</div><div><h3>La community</h3><p>È il cuore di Edda Studio. Abbonati, partecipanti ai club, ospiti dei retreat, lettori della newsletter, soci dei salon. È il pilastro che genera la maggior parte delle entrate ricorrenti. La community non è il marketing degli autori: è il prodotto principale di Edda Studio. Tutto il resto le ruota attorno.</p></div></div>
+        <div class="pillarbig"><div class="roman">II.</div><div><h3>Gli autori</h3><p>Pochi, scelti, integrati. Gli autori di Edda Studio non sono clienti di un’agenzia: sono ambasciatori di un mondo. Per ognuno costruiamo un percorso completo — sviluppo editoriale, identità visiva, lancio nella community, eventi, audiolibri, edizioni numerate. La community alimenta i loro libri; i loro libri alimentano la community.</p></div></div>
+        <div class="pillarbig"><div class="roman">III.</div><div><h3>Il sapere applicato</h3><p>Corsi, masterclass, retreat tematici, percorsi di accompagnamento. Qui rientra la formazione plurima della casa — psicologia, naturopatia, mindfulness, esperienza HR — usata come contenuto dentro il mondo Edda Studio, non come servizio separato.</p></div></div>
+      </div>
+      <p class="oneliner reveal" style="margin-top:clamp(40px,5vw,64px)">Tre pilastri, una sola voce. <span class="red">Una sola casa, molte stanze.</span></p>
+
+      <!-- CAP V -->
+      <div class="chapter reveal">
+        <span class="kick">Capitolo V</span>
+        <h2 class="d2">La voce di Edda Studio</h2>
+        <hr class="rule-red">
+        <p class="read mt-m">Riconoscibile alla terza riga di ogni testo, alla terza inquadratura di ogni video, alla terza nota di ogni messaggio. Questa è la nostra voce.</p>
+      </div>
+      <div class="voicegrid reveal mt-m">
+        <div>
+          <span class="label" style="font-family:var(--font-display);font-weight:800;font-stretch:125%;text-transform:uppercase;color:var(--red);font-size:0.7rem;letter-spacing:0.16em;display:block;margin-bottom:8px">Cosa siamo</span>
+          <ul class="voicelist">
+            <li><b>Calde,</b> mai sentimentali.</li>
+            <li><b>Colte,</b> mai accademiche.</li>
+            <li><b>Eleganti,</b> mai distaccate.</li>
+            <li><b>Esigenti,</b> mai snob.</li>
+            <li><b>Dirette,</b> mai brutali.</li>
+            <li><b>Curate,</b> mai ostentate.</li>
+          </ul>
+        </div>
+        <div>
+          <span class="label" style="font-family:var(--font-display);font-weight:800;font-stretch:125%;text-transform:uppercase;color:var(--red);font-size:0.7rem;letter-spacing:0.16em;display:block;margin-bottom:8px">Cosa non diciamo mai</span>
+          <ul class="voicelist">
+            <li>Non parliamo per slogan o claim pubblicitari.</li>
+            <li>Niente emoji, punti esclamativi multipli, scrittura emotiva forzata.</li>
+            <li>Non promettiamo trasformazioni. Promettiamo accompagnamento.</li>
+            <li>Non parliamo di quante copie venderà un libro. Parliamo di chi lo leggerà.</li>
+            <li>Non li chiamiamo community o utenti. Li chiamiamo lettrici e lettori.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="reveal mt-l">
+        <span class="kick" style="display:block;margin-bottom:18px">Il lessico Edda Studio</span>
+        <ul class="lex">
+          <li><span class="term">Casa di lettura</span> &nbsp;<span class="gloss">il sostantivo che descrive Edda Studio meglio della parola «agenzia».</span></li>
+          <li><span class="term">Salon</span> &nbsp;<span class="gloss">i nostri eventi serali dal vivo, sul modello dei salotti letterari di altri secoli.</span></li>
+          <li><span class="term">Reading retreat</span> &nbsp;<span class="gloss">i ritiri di lettura, sempre con la spiegazione in italiano accanto.</span></li>
+          <li><span class="term">Lettrici e lettori</span> &nbsp;<span class="gloss">mai utenti, mai membri, mai «community» in senso americano.</span></li>
+          <li><span class="term">Autore di casa</span> &nbsp;<span class="gloss">chi rappresentiamo — non cliente, non assistito.</span></li>
+          <li><span class="term">Curatela</span> &nbsp;<span class="gloss">non gestione, non selezione: curatela.</span></li>
+          <li><span class="term">Cura</span> &nbsp;<span class="gloss">parola centrale del nostro vocabolario, dove altri direbbero «servizio».</span></li>
+          <li><span class="term">Tempo lungo</span> &nbsp;<span class="gloss">il nostro modo di parlare di slow.</span></li>
+        </ul>
+      </div>
+
+      <!-- CAP VI -->
+      <div class="chapter reveal">
+        <span class="kick">Capitolo VI</span>
+        <h2 class="d2">La promessa</h2>
+        <hr class="rule-red">
+        <p class="read mt-m">Edda Studio promette tre cose a chi entra in casa. Le promettiamo ai lettori, agli autori, e a noi stessi quando lavoriamo.</p>
+      </div>
+      <div class="reveal mt-m">
+        <div class="value"><div class="roman">I.</div><div><h3>Promettiamo cura, sempre</h3><p>Ogni cosa che facciamo passerà per le mani di una persona prima di arrivare a te. Niente sarà automatico, niente generico, niente fretta. Se troviamo un libro che non amiamo davvero, non te lo facciamo leggere.</p></div></div>
+        <div class="value"><div class="roman">II.</div><div><h3>Promettiamo presenza</h3><p>Quando entri nella casa Edda Studio, troverai una persona reale dall’altra parte. Una che conosce la tua voce, ricorda i tuoi messaggi, sa cosa hai letto l’anno scorso. Crescere non significa diventare anonimi.</p></div></div>
+        <div class="value"><div class="roman">III.</div><div><h3>Promettiamo tempo lungo</h3><p>Non siamo un’esperienza usa e getta. Siamo un luogo dove si torna. Costruiamo prodotti che durano, conversazioni che maturano, autori che crescono nel tempo. Se cerchi qualcosa che ti accompagni per anni, abbiamo aperto questa casa per te.</p></div></div>
+      </div>
+
+      <!-- EPILOGO -->
+      <div class="chapter reveal">
+        <span class="kick">Epilogo</span>
+        <h2 class="d2">Edda Studio,<br>fra cinque anni</h2>
+        <hr class="rule-red">
+      </div>
+      <div class="read reveal mt-m">
+        <p>Fra cinque anni Edda Studio sarà la prima casa di lettura italiana per come oggi non esiste. Saremo un riferimento per chi legge bene, scrive bene, vive bene — il brand culturale che ha riportato in Italia il piacere della lettura come pratica condivisa, lenta, autoriale.</p>
+        <p>Avremo un nucleo di socie e soci che fanno parte della casa da anni. Una decina di autori cresciuti dentro la nostra cura. Una linea di prodotti editoriali nostri — audiolibri, edizioni numerate, antologie — che le librerie indipendenti chiederanno di tenere. Un calendario di salon, retreat ed eventi così denso che le persone chiederanno quando è il prossimo, invece che se ce ne sarà uno.</p>
+        <p>Ma la cosa più importante è che, fra cinque anni, una lettrice da qualche parte in Italia aprirà una mail di Edda Studio la domenica mattina, leggerà la prima riga, e dirà a chi le sta accanto: <i>questa è una delle cose più belle della mia settimana.</i></p>
+        <p class="oneliner" style="max-width:30ch">Per quella lettrice <span class="red">abbiamo aperto questa casa.</span></p>
+      </div>
+
+      <div class="sign reveal">
+        <p class="nm">Sara Boscaro</p>
+        <p class="meta">Fondatrice &nbsp;·&nbsp; Edda Studio</p>
+      </div>
+
+      <div class="cta-row">
+        <a class="btn" href="/#newsletter">Entra in casa <span class="arr">→</span></a>
+        <a class="link-cta" href="/la-casa/">Conosci la casa <span class="arr">→</span></a>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <a class="logo" href="/">EDDA<span class="red">STUDIO</span></a>
+        <p class="foot-tag">Uno studio letterario indipendente.<br>Dove gli autori trovano i lettori, e i lettori gli autori.</p>
+      </div>
+      <div class="foot-col">
+        <h4 class="display">Cosa facciamo</h4>
+        <ul>
+          <li><a href="/scrittori/">Per gli scrittori</a></li>
+          <li><a href="/esperienze/">Le esperienze</a></li>
+          <li><a href="/reading-circle/">Reading Circle</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4 class="display">Lo studio</h4>
+        <ul>
+          <li><a href="/manifesto/">Manifesto</a></li>
+          <li><a href="/la-casa/">Chi siamo</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4 class="display">Resta in contatto</h4>
+        <ul>
+          <li><a href="mailto:info@eddastudio.it">info@eddastudio.it</a></li>
+          <li><a href="#">Instagram @eddaedizioni</a></li>
+          <li><a href="#">LinkedIn @saraboscaro</a></li>
+          <li><span style="color:#8a8a85">Padova, Italia</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© Edda Studio MMXXVI</span><span>·</span><span>P.IVA [da inserire]</span><span>·</span><a href="/legali/#privacy">Privacy</a><span>·</span><a href="/legali/#cookie">Cookie</a>
+    </div>
+  </div>
+</footer>
+
+<script src="/image-slot.js"></script>
+<script src="/edda.js"></script>
+</body>
+</html>
