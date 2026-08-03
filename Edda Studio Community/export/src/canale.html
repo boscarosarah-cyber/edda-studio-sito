@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Edda Reading Club — Edda Studio</title>
+<meta name="description" content="Il canale YouTube e podcast di Edda Studio. Conversazioni lente sui libri. Primo episodio il 27 settembre 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="edda.css">
+<template id="__bundler_thumbnail">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+    <rect width="400" height="400" fill="#F5F5F0"/>
+    <text x="50%" y="46%" text-anchor="middle" font-family="Arial Black, sans-serif" font-weight="900" font-size="58" letter-spacing="-1" fill="#0E0E0E">EDDA</text>
+    <text x="50%" y="62%" text-anchor="middle" font-family="Arial Black, sans-serif" font-weight="900" font-size="58" letter-spacing="-1" fill="#E8002D">STUDIO</text>
+    <rect x="160" y="280" width="80" height="10" fill="#E8002D"/>
+  </svg>
+</template>
+<style>
+  .rubrica{ background:var(--white); border:1.5px solid var(--ink); padding:clamp(26px,3vw,40px); display:flex; flex-direction:column; gap:16px; height:100%; }
+  .rubrica .roman{ font-size:clamp(2.2rem,4vw,3.2rem); }
+  .rubrica h3{ font-size:clamp(1.3rem,2.2vw,1.8rem); line-height:1; }
+  .rubrica .sub{ font-family:var(--font-body); font-style:italic; color:var(--ink-2); }
+  .rubrica .dur{ margin-top:auto; font-family:var(--font-display); font-weight:800; font-stretch:125%; color:var(--red); font-size:0.72rem; letter-spacing:0.12em; }
+  .eplist{ display:flex; flex-direction:column; }
+  .ep{ display:grid; grid-template-columns:64px 1fr auto; gap:clamp(16px,3vw,40px); align-items:baseline; padding:26px 0; border-top:1px solid rgba(14,14,14,.16); }
+  .ep:last-child{ border-bottom:1px solid rgba(14,14,14,.16); }
+  .ep .epn{ font-family:var(--font-display); font-weight:900; font-stretch:125%; color:var(--red); font-size:1.4rem; }
+  .ep .rb{ font-family:var(--font-display); font-weight:800; font-stretch:125%; text-transform:uppercase; color:var(--red); font-size:0.62rem; letter-spacing:0.14em; display:block; margin-bottom:7px; }
+  .ep h3{ font-size:clamp(1.1rem,1.8vw,1.45rem); line-height:1.05; }
+  .ep .when{ font-size:0.82rem; color:var(--ink-2); margin-top:7px; }
+  .ep .dur{ font-size:0.82rem; color:var(--ink-2); white-space:nowrap; }
+  @media(max-width:640px){ .ep{ grid-template-columns:40px 1fr; } .ep .dur{ grid-column:2; } }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="logo" href="index.html">EDDA<span class="red">STUDIO</span></a>
+    <button class="nav-toggle" aria-label="Apri il menu"><span></span><span></span><span></span></button>
+    <nav><ul class="nav-links">
+      <li><a href="scrittori.html">Scrittori</a></li>
+      <li><a href="esperienze.html">Esperienze</a></li>
+      <li><a href="reading-circle.html">Reading Circle</a></li>
+      <li><a href="manifesto.html">Manifesto</a></li>
+      <li><a href="la-casa.html">La casa</a></li>
+    </ul></nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="page-hero" data-screen-label="Canale — Hero">
+    <div class="wrap reveal">
+      <span class="eyebrow">Il canale &nbsp;·&nbsp; YouTube + Podcast</span>
+      <h1 class="d1">Edda<br>Reading <span class="red">Club.</span></h1>
+      <hr class="rule-red" style="margin-top:30px">
+      <p class="lede mt-m" style="max-width:54ch">Conversazioni lente sui libri, le case dei lettori, le scrittrici del nostro tempo.</p>
+      <div class="body-col mt-s">
+        <p>Un episodio al mese, in alta produzione. Nessun ospite messo a parlare in croma key, nessuna intervista veloce. Conversazioni di un’ora reale, registrate nelle case degli scrittori o nello studio Edda Studio a Padova.</p>
+        <p>Il primo episodio esce domenica <b>27 settembre 2026, alle 10 del mattino.</b> Su YouTube e su Spotify, contemporaneamente.</p>
+      </div>
+      <div class="cta-row">
+        <a class="btn" href="#">Iscriviti al canale <span class="arr">→</span></a>
+        <a class="link-cta" href="#">Ascolta su Spotify <span class="arr">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRE RUBRICHE -->
+  <section class="section" data-screen-label="Canale — Rubriche">
+    <div class="wrap">
+      <div class="reveal">
+        <span class="eyebrow">Un canale, tre ritmi</span>
+        <h2 class="d2">Tre rubriche che ruotano<br>mese dopo mese.</h2>
+        <hr class="rule-red" style="margin-top:30px">
+      </div>
+      <div class="grid grid-3 mt-l">
+        <article class="rubrica reveal">
+          <div class="roman">I.</div>
+          <h3>Lettera da Edda</h3>
+          <p class="sub">in primo piano, Sara</p>
+          <p>Un episodio in cui Sara parla direttamente alla camera, da sola, nello studio Edda. Un libro, una riflessione, una conversazione con il pubblico. Quaranta minuti di pensiero lento.</p>
+          <span class="dur">40 minuti</span>
+        </article>
+        <article class="rubrica reveal" data-delay="100">
+          <div class="roman">II.</div>
+          <h3>In casa di</h3>
+          <p class="sub">a casa di una scrittrice</p>
+          <p>Sara va a casa di una scrittrice italiana contemporanea. Le riprese sono nel suo soggiorno, nella sua libreria, nella sua cucina. Una conversazione lunga, vera, sulla scrittura e sulla vita.</p>
+          <span class="dur">50 minuti</span>
+        </article>
+        <article class="rubrica reveal" data-delay="200">
+          <div class="roman">III.</div>
+          <h3>Il libro che ti restituisco</h3>
+          <p class="sub">un libro rivisto, anni dopo</p>
+          <p>Un libro letto da Sara molti anni fa, ripreso oggi. Cosa è cambiato nella lettrice, cosa è cambiato nel libro. La memoria, il tempo, la lettura come specchio.</p>
+          <span class="dur">30 minuti</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRIMI EPISODI -->
+  <section class="section tight" data-screen-label="Canale — Primi episodi">
+    <div class="wrap">
+      <div class="reveal">
+        <span class="eyebrow">Autunno-inverno 2026</span>
+        <h2 class="d2">Cinque episodi<br>per cominciare.</h2>
+        <hr class="rule-red" style="margin-top:30px">
+      </div>
+      <div class="eplist reveal mt-l">
+        <div class="ep">
+          <span class="epn">01</span>
+          <div><span class="rb">Lettera da Edda</span><h3>Perché abbiamo bisogno di una casa di lettura italiana.</h3><p class="when">27 settembre 2026</p></div>
+          <span class="dur">40 min</span>
+        </div>
+        <div class="ep">
+          <span class="epn">02</span>
+          <div><span class="rb">In casa di</span><h3>A casa di Giulia Caminito.</h3><p class="when">25 ottobre 2026</p></div>
+          <span class="dur">50 min</span>
+        </div>
+        <div class="ep">
+          <span class="epn">03</span>
+          <div><span class="rb">Il libro che ti restituisco</span><h3>Rileggere «Le otto montagne» dieci anni dopo.</h3><p class="when">22 novembre 2026</p></div>
+          <span class="dur">30 min</span>
+        </div>
+        <div class="ep">
+          <span class="epn">04</span>
+          <div><span class="rb">Lettera da Edda · speciale natalizio</span><h3>I libri che mi hanno tenuto compagnia nel 2026.</h3><p class="when">20 dicembre 2026</p></div>
+          <span class="dur">40 min</span>
+        </div>
+        <div class="ep">
+          <span class="epn">05</span>
+          <div><span class="rb">In casa di</span><h3>A casa di Veronica Raimo.</h3><p class="when">31 gennaio 2027</p></div>
+          <span class="dur">50 min</span>
+        </div>
+      </div>
+      <div class="cta-row">
+        <a class="btn" href="newsletter.html">Avvisami all’uscita degli episodi <span class="arr">→</span></a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <a class="logo" href="index.html">EDDA<span class="red">STUDIO</span></a>
+        <p class="foot-tag">Una casa di lettura italiana.<br>Per chi crede che leggere sia un atto di cura.</p>
+      </div>
+      <div class="foot-col">
+        <h4 class="display">Cosa facciamo</h4>
+        <ul>
+          <li><a href="scrittori.html">Per gli scrittori</a></li>
+          <li><a href="esperienze.html">Le esperienze</a></li>
+          <li><a href="reading-circle.html">Reading Circle</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4 class="display">La casa</h4>
+        <ul>
+          <li><a href="manifesto.html">Manifesto</a></li>
+          <li><a href="la-casa.html">Chi siamo</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4 class="display">Resta in contatto</h4>
+        <ul>
+          <li><a href="mailto:info@eddastudio.it">info@eddastudio.it</a></li>
+          <li><a href="#">Instagram @eddaedizioni</a></li>
+          <li><a href="#">LinkedIn @saraboscaro</a></li>
+          <li><span style="color:#8a8a85">Padova, Italia</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© Edda Studio MMXXVI</span><span>·</span><span>P.IVA [da inserire]</span><span>·</span><a href="#">Privacy</a><span>·</span><a href="#">Cookie</a>
+    </div>
+  </div>
+</footer>
+
+<script src="image-slot.js"></script>
+<script src="edda.js"></script>
+</body>
+</html>
