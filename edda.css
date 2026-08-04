@@ -127,6 +127,18 @@ p{ text-wrap:pretty; }
 }
 .nav-links a:hover::after, .nav-links a.active::after{ right:0; }
 .nav-links a.active{ color:var(--ink); }
+.nav-links .nav-cta a{
+  background:var(--red); color:var(--paper);
+  padding:9px 16px; letter-spacing:0.08em; font-size:0.76rem;
+  font-family:var(--font-display); font-weight:800; font-stretch:125%; text-transform:uppercase;
+  transition:background .2s;
+}
+.nav-links .nav-cta a::after{ display:none; }
+.nav-links .nav-cta a:hover{ background:var(--ink); color:var(--paper); }
+@media (max-width:880px){
+  .nav-links .nav-cta{ margin-top:8px; }
+  .nav-links .nav-cta a{ display:inline-block; width:auto; padding:12px 20px; }
+}
 
 .nav-toggle{ display:none; background:none; border:0; cursor:pointer; padding:8px; }
 .nav-toggle span{ display:block; width:24px; height:2px; background:var(--ink); margin:5px 0; transition:.25s; }
@@ -271,6 +283,13 @@ p{ text-wrap:pretty; }
 
 /* full contact form */
 .cform{ display:grid; gap:18px; max-width:560px; }
+
+/* Substack embed (newsletter iscrizione reale) */
+.substack-embed{ width:100%; max-width:520px; height:150px; border:2px solid var(--ink); background:#fff; display:block; }
+.dark .substack-embed{ border-color:var(--paper); }
+.substack-note{ margin-top:14px; font-size:0.78rem; color:var(--ink-2); }
+.dark .substack-note{ color:#9b9b95; }
+
 .cform label{ font-size:0.78rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--ink-2); display:block; margin-bottom:8px; font-family:var(--font-display); font-weight:700; font-stretch:125%;}
 .cform input, .cform textarea{
   width:100%; border:2px solid var(--ink); background:var(--white); padding:14px 16px;

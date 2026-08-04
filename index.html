@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/edda.css">
+<link rel="stylesheet" href="edda.css">
 <template id="__bundler_thumbnail" data-bg-color="#F5F5F0">
   <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
     <rect width="1200" height="800" fill="#F5F5F0"/>
@@ -19,12 +19,20 @@
 </template>
 <style>
   /* Hero specifico Home */
-  .home-hero{ padding-top:clamp(40px,6vw,72px); padding-bottom:var(--sec); }
-  .home-hero .split{ grid-template-columns:1.08fr 0.92fr; align-items:center; }
-  .home-hero h1{ font-size:clamp(3.4rem,11vw,9rem); margin:18px 0 28px; }
-  .home-hero .sub{ font-size:clamp(1.35rem,2.6vw,2.1rem); line-height:1.02; max-width:18ch; }
-  .home-hero .hero-img{ width:100%; aspect-ratio:4/5; height:auto; }
-  @media (max-width:860px){ .home-hero .hero-img{ aspect-ratio:4/3; } }
+  .home-hero{ position:relative; padding-top:0; padding-bottom:0; min-height:clamp(520px,64vw,780px); display:flex; align-items:center; overflow:hidden; }
+  .home-hero .hero-photo{ position:absolute; top:0; right:0; width:48%; height:100%; object-fit:cover; filter:grayscale(1) contrast(1.04); z-index:0; }
+  .home-hero .hero-photo::before{ content:""; }
+  .home-hero .hero-shade{ position:absolute; top:0; right:0; width:48%; height:100%; z-index:1; background:linear-gradient(90deg,var(--paper) 0%,rgba(245,245,240,0) 34%); }
+  .home-hero .hero-copy{ position:relative; z-index:2; max-width:60%; padding-block:clamp(40px,6vw,80px); }
+  .home-hero h1{ font-size:clamp(3.4rem,11vw,8.6rem); margin:18px 0 26px; }
+  .home-hero .sub{ font-size:clamp(1.45rem,2.8vw,2.3rem); line-height:1.06; max-width:22ch; }
+  .home-hero .lede{ max-width:46ch; }
+  @media (max-width:860px){
+    .home-hero{ min-height:0; display:block; }
+    .home-hero .hero-photo{ position:static; width:100%; height:clamp(240px,60vw,360px); display:block; }
+    .home-hero .hero-shade{ display:none; }
+    .home-hero .hero-copy{ max-width:100%; padding-top:clamp(32px,6vw,56px); }
+  }
 
   .two-fronts .card{ gap:22px; padding:clamp(28px,3.4vw,52px); }
   .two-fronts .card .roman{ font-size:clamp(2.6rem,5vw,4rem); }
@@ -44,18 +52,18 @@
 </head>
 <body>
 
-<header class="nav">
+<header class="nav" data-screen-label="Navigazione">
   <div class="nav-inner">
-    <a class="logo" href="/">EDDA<span class="red">STUDIO</span></a>
+    <a class="logo" href="index.html">EDDA<span class="red">STUDIO</span></a>
     <button class="nav-toggle" aria-label="Apri il menu"><span></span><span></span><span></span></button>
     <nav><ul class="nav-links">
-      <li><a href="/manifesto/">Manifesto</a></li>
-      <li><a href="/scrittori/">Autori</a></li>
-      <li><a href="/reading-circle/">Reading Circle</a></li>
-      <li><a href="/esperienze/">Esperienze</a></li>
-      <li><a href="/la-casa/">Chi siamo</a></li>
-      <li><a href="/contatti/">Contatti</a></li>
-      <li class="nav-cta"><a href="/newsletter/">La newsletter</a></li>
+      <li><a href="manifesto.html">Manifesto</a></li>
+      <li><a href="scrittori.html">Autori</a></li>
+      <li><a href="reading-circle.html">Reading Circle</a></li>
+      <li><a href="esperienze.html">Esperienze</a></li>
+      <li><a href="la-casa.html">Chi siamo</a></li>
+      <li><a href="contatti.html">Contatti</a></li>
+      <li class="nav-cta"><a href="newsletter.html">La newsletter</a></li>
     </ul></nav>
   </div>
 </header>
@@ -64,20 +72,17 @@
 
   <!-- BLOCCO 1 · HERO -->
   <section class="home-hero" data-screen-label="Home — Hero">
-    <div class="wrap">
-      <div class="split">
-        <div class="reveal">
-          <span class="eyebrow">La tua casa di lettura</span>
-          <h1 class="d1">EDDA<br><span class="red">STUDIO</span></h1>
-          <p class="sub display ink">Una casa di lettura italiana. <span class="red">Per chi scrive, per chi legge.</span></p>
-          <p class="lede mt-m">Edda Studio è una casa di lettura. Lavoriamo su tre fronti che si alimentano a vicenda: sviluppiamo carriere d’autore, costruiamo una community di lettori con il Reading Circle, e creiamo esperienze dal vivo — retreat, masterclass, cene letterarie. Ogni domenica alle nove esce la nostra lettera. Una pagina sola, sempre.</p>
-          <div class="cta-row">
-            <a class="btn" href="#newsletter">Entra in casa <span class="arr">→</span></a>
-            <a class="link-cta" href="/scrittori/">Sei uno scrittore? <span class="arr">→</span></a>
-          </div>
-        </div>
-        <div class="reveal" data-delay="120">
-          <image-slot id="hero-biblioteca" src="/img/hero-biblioteca.webp" class="hero-img" shape="rect" fit="cover" placeholder="Trascina qui una foto — una libreria di casa, in bianco e nero" style="height: 600px"></image-slot>
+    <img class="hero-photo" src="img/hero-biblioteca.webp" alt="Una libreria di casa, in bianco e nero">
+    <div class="hero-shade"></div>
+    <div class="wrap" style="width:100%">
+      <div class="reveal hero-copy">
+        <span class="eyebrow">Il tuo atelier letterario</span>
+        <h1 class="d1">EDDA<br><span class="red">STUDIO</span></h1>
+        <p class="sub display ink">Dove gli autori trovano i loro lettori <span class="red">— e i lettori trovano i loro autori.</span></p>
+        <p class="lede mt-m">Edda Studio è uno studio letterario indipendente. Lavoriamo su entrambi i lati del libro: con gli autori, sviluppiamo carriere e voci; con i lettori, costruiamo comunità attraverso il Reading Circle. Dal vivo, retreat, masterclass e cene letterarie. La newsletter esce ogni domenica mattina.</p>
+        <div class="cta-row">
+          <a class="btn" href="#newsletter">Ricevi la newsletter <span class="arr">→</span></a>
+          <a class="link-cta" href="scrittori.html">Sei uno scrittore? <span class="arr">→</span></a>
         </div>
       </div>
     </div>
@@ -87,32 +92,31 @@
   <section class="section two-fronts" data-screen-label="Home — Tre motori">
     <div class="wrap">
       <div class="reveal">
-        <span class="eyebrow">TRE ANIME, UNA SOLA CASA</span>
-        <h2 class="d2">NON PUBBLICHIAMO LIBRI.
-COSTRUIAMO MONDI ATTORNO AI LIBRI.</h2>
+        <span class="eyebrow">Tre direzioni</span>
+        <h2 class="d2">NON PUBBLICHIAMO LIBRI.<br>COSTRUIAMO MONDI<br>ATTORNO AI LIBRI.</h2>
         <hr class="rule-red" style="margin-top:30px">
       </div>
       <div class="grid grid-3 mt-l">
         <article class="card reveal">
-          <span class="ey-sm">Con gli scrittori</span>
+          <span class="ey-sm">Con gli autori — un lato del libro</span>
           <div class="roman">I.</div>
-          <h3>I percorsi d’autore</h3>
-          <p>Sviluppiamo carriere d’autore: identità, accompagnamento editoriale, lancio nella community, eventi dedicati. Sei autori all’anno, non uno di più.</p>
-          <a class="link-cta" href="/scrittori/">Come lavoriamo con gli autori <span class="arr">→</span></a>
+          <h3>I Percorsi d’Autore</h3>
+          <p>Sviluppiamo carriere d’autore: identità, voce, accompagnamento editoriale, lancio nella comunità di lettrici e lettori, eventi dedicati. Sei autori all’anno, non uno di più.</p>
+          <a class="link-cta" href="scrittori.html">Come lavoriamo con gli autori <span class="arr">→</span></a>
         </article>
         <article class="card reveal" data-delay="100">
-          <span class="ey-sm">Con chi cerca tempo per sé</span>
+          <span class="ey-sm">Dal vivo — dove i due lati si incontrano</span>
           <div class="roman">II.</div>
-          <h3>Le esperienze</h3>
-          <p>Retreat di lettura residenziali, masterclass, cene letterarie e salon serali. Esperienze piccole per scelta, mai più di venti persone.</p>
-          <a class="link-cta" href="/esperienze/">Scopri le esperienze <span class="arr">→</span></a>
+          <h3>Le Esperienze</h3>
+          <p>Retreat residenziali, masterclass e cene letterarie. Esperienze intime per scelta: mai più di venti persone.</p>
+          <a class="link-cta" href="esperienze.html">Scopri le esperienze <span class="arr">→</span></a>
         </article>
         <article class="card reveal" data-delay="200">
-          <span class="ey-sm">Con i lettori</span>
+          <span class="ey-sm">Con i lettori — l’altro lato</span>
           <div class="roman">III.</div>
           <h3>Il Reading Circle</h3>
-          <p>La membership. Ogni mese un libro scelto da Sara, una guida di lettura, una conversazione dal vivo e un evento in più. La porta d'ingresso di tutto il mondo Edda Studio.</p>
-          <a class="link-cta" href="/reading-circle/">Entra nel Reading Circle <span class="arr">→</span></a>
+          <p>La membership mensile. Ogni mese: un libro scelto da noi, una guida di lettura e una conversazione dal vivo. Il piacere di leggere, moltiplicato dalla compagnia giusta.</p>
+          <a class="link-cta" href="reading-circle.html">Entra nel Reading Circle <span class="arr">→</span></a>
         </article>
       </div>
     </div>
@@ -121,9 +125,28 @@ COSTRUIAMO MONDI ATTORNO AI LIBRI.</h2>
   <!-- BLOCCO 3 · PULL QUOTE -->
   <section class="dark quote-break" data-screen-label="Home — Pull quote">
     <div class="wrap reveal">
-      <p class="pq display">Non leggiamo per essere informati.<br><span class="red">Leggiamo per essere accompagnati.</span></p>
+      <p class="pq display">Non leggiamo per sapere.<br><span class="red">Leggiamo per sentire.</span></p>
       <div class="cta-row">
-        <a class="link-cta on-dark" href="/manifesto/">Leggi il manifesto completo <span class="arr">→</span></a>
+        <a class="link-cta on-dark" href="manifesto.html">Leggi il manifesto completo <span class="arr">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOCCO 3b · IL CONTESTO -->
+  <section class="section" data-screen-label="Home — Il contesto">
+    <div class="wrap split">
+      <div class="reveal">
+                <img src="img/contesto-scrittrice.webp" alt="Una scrittrice al lavoro, tra laptop e taccuino" style="width:100%;aspect-ratio:4/5;object-fit:cover;border:1.5px solid var(--ink);">
+      </div>
+      <div class="reveal body-col" data-delay="120">
+        <span class="eyebrow">Il contesto</span>
+        <h2 class="d2">Il sistema editoriale<br>italiano ha un problema.</h2>
+        <hr class="rule-red" style="margin:26px 0 30px">
+        <p>Hai scritto il tuo libro. Ci hai messo anni, passione, una parte di te. Poi cosa succede? La casa editrice ti pubblica e ti abbandona. Zero marketing, zero strategia. Ti dicono di promuoverlo sui tuoi social e sperano in un miracolo.</p>
+        <p>Il risultato: copie invendute, recensioni che non arrivano, la frustrazione di sapere che il tuo libro meritava di più. Non è colpa tua. È il sistema che è rotto. Noi siamo qui per cambiare questo.</p>
+        <div class="cta-row">
+          <a class="btn" href="contatti.html">Fissa una conversazione gratuita <span class="arr">→</span></a>
+        </div>
       </div>
     </div>
   </section>
@@ -132,30 +155,30 @@ COSTRUIAMO MONDI ATTORNO AI LIBRI.</h2>
   <section class="section" data-screen-label="Home — Tre passaggi">
     <div class="wrap">
       <div class="reveal">
-        <span class="eyebrow">Il metodo</span>
-        <h2 class="d2">Tre passaggi per<br>lavorare insieme.</h2>
+        <span class="eyebrow">Come si comincia</span>
+        <h2 class="d2">Tre passi<br>per iniziare.</h2>
         <hr class="rule-red" style="margin-top:30px">
       </div>
       <div class="steps mt-l">
         <div class="step reveal">
           <div class="roman">I.</div>
           <div class="step-body">
-            <h3>SCRIVICI UNA LETTERA</h3>
-            <p class="kv">Non un curriculum, non un manoscritto. Una mail che mi racconta chi sei e cosa stai cercando, come autore o come lettore. Ti rispondo entro tre giorni lavorativi.</p>
+            <h3>SCRIVICI</h3>
+            <p class="kv">Non un curriculum, non un manoscritto. Una mail che racconta chi sei e cosa stai cercando, come autore o come lettore. Ti rispondiamo entro tre giorni lavorativi.</p>
           </div>
         </div>
         <div class="step reveal">
           <div class="roman">II.</div>
           <div class="step-body">
-            <h3>PARLIAMO MEZZ’ORA SU MEET</h3>
-            <p class="kv">Una prima conversazione gratuita di trenta minuti. Capiamo se Edda Studio è la casa giusta per te. Tu capisci se siamo le persone giuste per quello che cerchi. Se non ci troviamo, niente di rotto, ti indichiamo la direzione giusta.</p>
+            <h3>PARLIAMO MEZZ’ORA</h3>
+            <p class="kv">Una conversazione gratuita su Meet. Capiamo se Edda Studio è quello che cerchi; tu capisci se siamo le persone giuste. Se non siamo noi, ti diciamo chi.</p>
           </div>
         </div>
         <div class="step reveal">
           <div class="roman">III.</div>
           <div class="step-body">
-            <h3>Apriamo il percorso</h3>
-            <p class="kv">Se decidiamo di lavorare insieme, ti mandiamo una proposta scritta su misura: cosa faremo, in quanto tempo, con quale investimento. Niente pacchetti preconfezionati, ogni autore, ogni lettrice ha esigenze diverse.</p>
+            <h3>APRIAMO IL PERCORSO</h3>
+            <p class="kv">Una proposta scritta su misura: cosa faremo, in quanto tempo, con quale investimento. Niente pacchetti preconfezionati: ogni autore, ogni lettore ha un punto di partenza diverso.</p>
           </div>
         </div>
       </div>
@@ -166,27 +189,14 @@ COSTRUIAMO MONDI ATTORNO AI LIBRI.</h2>
   <section class="section tight" data-screen-label="Home — Il pubblico">
     <div class="wrap split">
       <div class="reveal">
-        <span class="eyebrow">Il nostro pubblico</span>
+        <span class="eyebrow">Per chi</span>
         <h2 class="d2">Edda Studio<br>non è per tutti.</h2>
         <hr class="rule-red" style="margin-top:30px">
       </div>
       <div class="reveal body-col" data-delay="120">
-        <p>Parliamo a chi crede che la lettura sia un atto di cura e a chi scrive perché ha qualcosa di vero da dire.
-
-
-Parliamo a chi legge molto e ha voglia di parlarne da adulti. A chi scrive con serietà e cerca un luogo che lo accompagni davvero. A chi sente che la lettura è una pratica di cura, non un consumo culturale.
-
-
-Ha tra i 35 e i 60 anni. Lavora sodo.
-Ha scaffali pieni di libri in casa. Ne compra più di quanti ne riesca a finire. Ama l'estetica curata, il tempo lento, le cose fatte bene. Diffida del marketing aggressivo.
-
-
-Desidera una comunità di lettori che non sia provinciale, che non sia accademica, che non sia social. Una comunità adulta, raffinata, gentile, esigente.
-
-
-Quel luogo, in Italia, non esisteva. Edda Studio è quel luogo.</p>
-        <p>Lavoriamo con autrici e autori che hanno una voce, non con chi cerca un passaggio veloce verso la pubblicazione. Costruiamo una community di lettrici e lettori adulti che leggono molto, scelgono con cura, e hanno voglia di farlo in compagnia.</p>
-        <p>Se ti riconosci, c’è una casa pronta per te. Se non ti riconosci, va bene così — Edda Studio resta selettiva.</p>
+        <p>Parliamo a chi scrive con una voce propria e cerca qualcuno che la aiuti a farsi sentire dai lettori giusti. E parliamo a chi legge molto, sceglie con cura, e vuole farlo in compagnia — senza la superficialità dei social, senza l’aridità dell’accademia.</p>
+        <p>Lavoriamo con autori che hanno qualcosa di vero da dire, non con chi cerca un passaggio veloce verso la pubblicazione. Costruiamo una comunità di lettrici e lettori adulti che scelgono i libri con intenzione e hanno voglia di parlarne seriamente.</p>
+        <p>Se ti riconosci, sai già come trovarci.</p>
       </div>
     </div>
   </section>
@@ -195,7 +205,7 @@ Quel luogo, in Italia, non esisteva. Edda Studio è quel luogo.</p>
   <section class="section" data-screen-label="Home — Novità">
     <div class="wrap">
       <div class="reveal">
-        <span class="eyebrow">Novità di casa</span>
+        <span class="eyebrow">Dal nostro studio</span>
         <h2 class="d2">Cosa stiamo facendo<br>in questo momento.</h2>
         <hr class="rule-red" style="margin-top:30px">
       </div>
@@ -205,22 +215,40 @@ Quel luogo, in Italia, non esisteva. Edda Studio è quel luogo.</p>
           <p class="meta">28 giugno 2026</p>
           <h3>Buongiorno. Edda apre oggi.</h3>
           <p>La prima lettera di Edda Studio. Una sola pagina, ogni domenica.</p>
-          <a class="link-cta" href="/newsletter/" style="margin-top:auto">Leggi <span class="arr">→</span></a>
+          <a class="link-cta" href="newsletter.html" style="margin-top:auto">Leggi <span class="arr">→</span></a>
         </article>
         <article class="news-card reveal" data-delay="100">
           <span class="tag">Prossimo evento</span>
           <p class="meta">27 settembre 2026</p>
           <h3>Primo episodio Edda Reading Club.</h3>
           <p>Apre il canale YouTube e podcast di Edda Studio.</p>
-          <a class="link-cta" href="/canale/" style="margin-top:auto">Mettilo in agenda <span class="arr">→</span></a>
+          <a class="link-cta" href="canale.html" style="margin-top:auto">Mettilo in agenda <span class="arr">→</span></a>
         </article>
         <article class="news-card reveal" data-delay="200">
           <span class="tag">Ultimo articolo</span>
           <p class="meta">Luglio 2026</p>
           <h3>Leggere come si cammina: lentamente, con un passo solo.</h3>
           <p>Un estratto dalla lettera della domenica sul tempo lungo della pagina.</p>
-          <a class="link-cta" href="/newsletter/" style="margin-top:auto">Leggi <span class="arr">→</span></a>
+          <a class="link-cta" href="newsletter.html" style="margin-top:auto">Leggi <span class="arr">→</span></a>
         </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOCCO 6b · LA NOSTRA STORIA -->
+  <section class="section tight" data-screen-label="Home — La nostra storia">
+    <div class="wrap split">
+      <div class="reveal">
+        <span class="eyebrow">La nostra storia</span>
+        <h2 class="d2">Nati da una<br>storia vera.</h2>
+        <hr class="rule-red" style="margin-top:30px">
+      </div>
+      <div class="reveal body-col" data-delay="120">
+        <p>Edda era la nonna di Sara Boscaro, fondatrice di questo studio. Nel 2017 Sara ha scelto di prendersi cura di lei, e in quei mesi ha capito la cosa più importante: che stare davvero con le persone è la cosa più preziosa che esista.</p>
+        <p>Edda Studio porta il suo nome e la sua filosofia.</p>
+        <div class="cta-row">
+          <a class="link-cta" href="la-casa.html">Leggi la nostra storia completa <span class="arr">→</span></a>
+        </div>
       </div>
     </div>
   </section>
@@ -230,41 +258,38 @@ Quel luogo, in Italia, non esisteva. Edda Studio è quel luogo.</p>
     <div class="wrap split">
       <div class="reveal">
         <span class="eyebrow">Una pagina alla domenica</span>
-        <h2 class="d2">Ricevi la lettera di Edda<br>ogni domenica.</h2>
+        <h2 class="d2">Ricevi la newsletter<br>di Edda.</h2>
       </div>
       <div class="reveal" data-delay="120">
-        <p class="body-col">Ogni domenica mattina alle nove, una sola pagina. Ti racconto cosa sto leggendo, ti consiglio un libro, condivido una riflessione sulla lettura come pratica di cura. Mai più di 1000 parole. Mai promozioni nascoste.</p>
-        <form class="form mt-m" data-edda-form data-success="Sei in casa. Ci leggiamo domenica mattina alle nove.">
-          <input type="email" name="email" placeholder="la tua email" required aria-label="La tua email">
-          <button type="submit">Entra in casa <span class="arr">→</span></button>
-        </form>
-        <p class="microcopy">Iscrizione gratuita. Disdetta in un clic. La tua email non viene mai condivisa con nessuno.</p>
+        <p class="body-col">Ogni domenica mattina: cosa stiamo leggendo, un libro da non perdere, una riflessione sulla lettura e su chi la scrive. Niente promozioni, niente rumore. Solo una pagina, quando hai tempo per leggerla.</p>
+        <iframe class="substack-embed mt-m" src="https://eddaedizioni.substack.com/embed" frameborder="0" scrolling="no" title="Iscriviti alla newsletter di Edda Studio"></iframe>
+        <p class="microcopy">Iscrizione gratuita. La tua email non viene condivisa con nessuno.</p>
       </div>
     </div>
   </section>
 
 </main>
 
-<footer class="footer">
+<footer class="footer" data-screen-label="Footer">
   <div class="wrap">
     <div class="foot-top">
       <div>
-        <a class="logo" href="/">EDDA<span class="red">STUDIO</span></a>
+        <a class="logo" href="index.html">EDDA<span class="red">STUDIO</span></a>
         <p class="foot-tag">Uno studio letterario indipendente.<br>Dove gli autori trovano i lettori, e i lettori gli autori.</p>
       </div>
       <div class="foot-col">
         <h4 class="display">Cosa facciamo</h4>
         <ul>
-          <li><a href="/scrittori/">Per gli scrittori</a></li>
-          <li><a href="/esperienze/">Le esperienze</a></li>
-          <li><a href="/reading-circle/">Reading Circle</a></li>
+          <li><a href="scrittori.html">Per gli scrittori</a></li>
+          <li><a href="esperienze.html">Le esperienze</a></li>
+          <li><a href="reading-circle.html">Reading Circle</a></li>
         </ul>
       </div>
       <div class="foot-col">
         <h4 class="display">Lo studio</h4>
         <ul>
-          <li><a href="/manifesto/">Manifesto</a></li>
-          <li><a href="/la-casa/">Chi siamo</a></li>
+          <li><a href="manifesto.html">Manifesto</a></li>
+          <li><a href="la-casa.html">Chi siamo</a></li>
         </ul>
       </div>
       <div class="foot-col">
@@ -278,12 +303,12 @@ Quel luogo, in Italia, non esisteva. Edda Studio è quel luogo.</p>
       </div>
     </div>
     <div class="foot-bottom">
-      <span>© Edda Studio MMXXVI</span><span>·</span><span>P.IVA [da inserire]</span><span>·</span><a href="/legali/#privacy">Privacy</a><span>·</span><a href="/legali/#cookie">Cookie</a>
+      <span>© Edda Studio MMXXVI</span><span>·</span><span>P.IVA [da inserire]</span><span>·</span><a href="legali.html#privacy">Privacy</a><span>·</span><a href="legali.html#cookie">Cookie</a>
     </div>
   </div>
 </footer>
 
-<script src="/image-slot.js"></script>
-<script src="/edda.js"></script>
+<script src="image-slot.js"></script>
+<script src="edda.js"></script>
 </body>
 </html>

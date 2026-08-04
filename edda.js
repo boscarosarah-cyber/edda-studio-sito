@@ -84,7 +84,7 @@
         e.preventDefault();
         var input = form.querySelector('input[type=email]');
         if(input && !input.checkValidity()){ input.reportValidity(); return; }
-        var msg = form.getAttribute('data-success') || 'Sei in casa. Ti abbiamo scritto una mail di conferma.';
+        var msg = form.getAttribute('data-success') || 'Ci siamo. Ci leggiamo domenica mattina.';
         var dark = form.classList.contains('on-dark') || form.closest('.dark');
         var done = document.createElement('div');
         done.className = 'form-done' + (dark? ' on-dark':'');
@@ -109,4 +109,6 @@
 
   function ready(fn){ if(document.readyState!=='loading') fn(); else document.addEventListener('DOMContentLoaded', fn); }
   ready(function(){ initNav(); initReveal(); initFaq(); initForms(); });
+  // Hook per il sito a pagina unica: riesegue reveal/faq quando cambia rotta
+  window.__eddaReveal = function(){ initReveal(); initFaq(); initForms(); };
 })();
